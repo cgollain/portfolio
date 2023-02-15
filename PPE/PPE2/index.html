@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Facture</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="facture.js"></script> 
+    </head>
+    <body>
+    <div id="header">
+        <img class="logo" src="img\logo.png">
+        <p class="rightheader" >
+            FACTURE
+            <br>
+            <br>
+            31/01/2023
+            __________________
+            <br>
+            <br>
+            N° 1 de facturation
+            __________________
+        </p>
+        <br>
+        <h3>Laboratoire GSB</h3>
+        <p>7 rue des Fleurs 37000 Tours.<br>
+            <br>
+            Clément Gollain <br>
+            clement.gollain@gmail.com <br>
+            SIRET : FR3658741254544551
+        </p>
+    </div>
+
+
+    <div id="destinataire">
+        <p>
+            <input type="texte" name="Desinataire" placeholder="Destinataire" ><br>
+            ______________________________________________________________________________________<br>
+            <input type="texte" name="nom" placeholder="Nom"> <br>
+            <input type="texte" name="nomsociete" placeholder="Nom de la Société"><br>
+            <input type="texte" name="adresse" placeholder="Adresse postale"><br>
+            <input type="texte" name="telephone" placeholder="Téléphone"><br>
+            <input type="texte" name="email" placeholder="Email"><br>
+        </p>
+        <div id="envoyera">
+            <p>
+                <input type="texte" name="Desinataire" placeholder="Envoyer à" ><br>
+                ______________________________________________________________________________________<br>
+                <input type="texte" name="nom" placeholder="Nom"><br>
+                <input type="texte" name="nomsociete" placeholder="Nom de la Société"><br>
+                <input type="texte" name="adresse" placeholder="Adresse postale"><br>
+                <input type="texte" name="telephone" placeholder="Téléphone"><br>
+                <input type="texte" name="email" placeholder="Email"><br>
+            </p>
+         </div>   
+    </div>
+
+    <center>
+    <table id="table_inv">
+      <tr>
+        <td class="tdescription"> DESCRIPTION</td>
+        <td class="tqpt">QUANTITE</td>
+        <td class="tqpt">PRIX UNITAIRE</td>
+        <td class="tqpt">TOTAL</td>
+      </tr>
+      <tr id="modeleLigne">
+        <td ><input type="text" name="desc" class="input desc" placeholder="Description" ></td>
+        <td ><input type="text" name="qte"  class="input qte"  value="0" ></td>
+        <td ><input type="text" name="prix" class="input prix" value="0" ></td>
+        <td ><input type="text" name="total"class="totalLigne" value="0" readonly="readonly"></td>
+      </tr>
+      <tr id="modeleLigne">
+        <td ><input type="text" name="desc" class="input desc" placeholder="Description" ></td>
+        <td ><input type="text" name="qte"  class="input qte"  value="0" ></td>
+        <td ><input type="text" name="prix" class="input prix" value="0" ></td>
+        <td ><input type="text" name="total"class="totalLigne" value="0" readonly="readonly"></td>
+      </tr>
+      <tr id="modeleLigne">
+        <td ><input type="text" name="desc" class="input desc" placeholder="Description" ></td>
+        <td ><input type="text" name="qte"  class="input qte"  value="0" ></td>
+        <td ><input type="text" name="prix" class="input prix" value="0" ></td>
+        <td ><input type="text" name="total"class="totalLigne" value="0" readonly="readonly"></td>
+      </tr>
+      <tr id="lastLigne">
+        <td ><input type="text" name="desc" class="input desc" placeholder="Description" ></td>
+        <td ><input type="text" name="qte"  class="input qte"  value="0" ></td>
+        <td ><input type="text" name="prix" class="input prix" value="0" ></td>
+        <td ><input type="text" name="total"class="totalLigne" value="0" readonly="readonly"></td>
+      </tr>
+    </table>
+  </center>
+
+      <input class="remarque"type="texte" name="Remarquer" placeholder="Remarques, notes et instructions de paiement">
+
+      <table class="calcul">
+        <tr>
+          <td class="format"> SOUS-TOTAL</td>
+          <td class="total"><input type="texte" name="remise" placeholder="?" ></td>
+        </tr>
+        </table>
+        <br>
+        <br>
+        <br>
+      <table class="calcul">
+
+        <tr>
+          <td class="format">REMISE</td>
+          <td class="total"><input type="text" name="remise"></td>
+        </tr>
+        <tr>
+          <td class="format">SOUS TOTAL MOINS LES REMISES</td>
+          <td class="total"><input type="text" name="sremise" ></td>
+        </tr>
+        <tr>
+          <td class="format">TAUX D'IMPOSTION</td>
+          <td class="total"><input type="text" name="taux" ></td>
+        </tr>
+        <tr>
+          <td class="format">TAXE TOTAL</td>
+          <td class="total"><input type="text" name="taxetotal" ></td>
+        </tr>
+        <tr>
+          <td class="format">EXPEDITO, MANUTENTION</td>
+          <td class="total"><input type="text" name="expi"></td>
+        </tr>
+        <tr>
+          <td class="format">________________________________</td>
+          <td class="total"></td>
+        </tr>
+        <tr>
+          <td class="formatmax">SOLDE DU </td>
+          <td class="totalmax"><input type="text" name="expi"></td>
+        </tr>
+      </table>
+    
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+        <button onclick="calculate()" >Calculer</bouton>
+        <button onclick="ajouterLigne()" >Ajouter une ligne</bouton>
+        <button onclick="suppimerLigne()" >Supprimer une ligne</bouton>
+        <button onclick="remplir(); remplirNombres();">Remplir automatiquement</button>
+        <button onclick="annuler()">Annuler</bouton>
+
+  
+
+
+
+
+
+    </body>
+
+
+</html>
